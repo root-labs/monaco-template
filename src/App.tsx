@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Navi from './componentsMine/Navi';
+import { Route, Routes } from 'react-router-dom';
+import CodeM from './componentsMine/CodeM';
+import Monac from './componentsMine/Monac';
+import Monac1 from './componentsMine/Monac1';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+return (
+    <div >
+     <Navi />
+     <button>Record</button>
+     <Routes >
+       <Route path="/mirror" element={<CodeM />} />
+       <Route path="/monaco" element={<Monac />} />
+       <Route path="/monaco1" element={<Monac1 />} />
+     </Routes>
     </div>
   );
 }
